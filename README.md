@@ -6,6 +6,8 @@ Note, this will trigger on all pushes to git. If you haven't changed master it w
 
 ## Usage
 
+### Github
+
 First, set a key on this app to secure deploys
 
     $ heroku config:add ACCESS_KEY=supersecret
@@ -25,6 +27,17 @@ For bonus points, you'll probably want to set up a [Heroku deploy hook](https://
 You can view the output from pushes via `heroku logs`
 
 This app supports multiple apps - just add a config for each app you want to deploy.
+
+### Travis CI
+
+This can also work with Travis CI, if you want to deploy on successful build. Base setup is the same as above, except instead of adding a webhook to GitHub add it to your .travis.yml like
+
+    notifications:
+      webhooks:
+        urls:
+          - https://gh-hk-deploy-app.herokuapp.com/deploy?app=appname&key=supersecret
+        on_success: always
+        on_failure: never
 
 ## License
 
