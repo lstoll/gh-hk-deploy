@@ -16,7 +16,7 @@ Create/Obtain a SSH key to use for fetching/deploying. Add this to your Github a
 
 Configure it in this app.
 
-    $ heroku config:add appname_SSH_KEY="$(cat deploy/id_rsa)" appname_GITHUB_REPO=git@githup.com/lstoll/appname.git appname_HEROKU_REPO=git@heroku.com
+    $ heroku config:add appname_SSH_KEY="$(cat deploy/id_rsa)" appname_GITHUB_REPO=git@github.com:lstoll/appname.git appname_HEROKU_REPO=git@heroku.com:project-name.git
 
 Then, set up a github webhook pointing to a URL like
 
